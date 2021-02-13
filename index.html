@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive pricing component</title>
+      <link rel="stylesheet" href="./style.css"  />   
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+    <div class="container">
+         <div class="backgroundCircle">
+            <div class="bigCircle"></div>
+            <div class="smallCircle"></div>
+         </div>
+          <div class="heading">
+            <h1>Simple, traffic-based pricing</h1>
+                <p>Sign-up for our 30-day trial, No credit card required</p>
+          </div>
+           <div class="body"> 
+               <div class="traffic__price">
+                     <span class="pageView">100K pageviews</span>
+                     <h1 class="price">$16.00 <span class="monthClass">/month</span></h1>
+               </div> 
+               <div class="range"> 
+                 <input type="range" min="8" max="36" step="4" value="16" oninput="dispChange(this.value)"  class="inputRange" />               
+              </div>
+               <div class="billing"> 
+                
+                <div class="switch">
+                   <label>
+                      Monthly Billing <input type="checkbox" checked id="toggleButton"/>
+                                           <span class="slider round"></span>       
+                    </label>
+                </div>
+                 <div class="yearlyBilling">
+          <p>Yearly Billing <span class="highlighter">25% discount</span>  </p>
+                </div>
+              
+              
+              
+              </div> 
+              <div class="subscription" >
+                <div class="useCase">
+                <ul type='none'>
+                  <li> <span class="checkMark">✔️</span> Unlimited websites</li>
+                  <li> <span class="checkMark">✔️</span> 100% data ownership</li>
+                  <li> <span class="checkMark">✔️</span> Email reports</li>
+                </ul>
+                </div>
+                
+                <div class="payhere">
+          <button>Start my trail</button>
+                </div>
+              </div>
+           
+            </div>
+            
+          </div>
+    </div>
+ 
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Shashi</a>.
+  </div>
+</body>
+ <script>
+      
+       let priceList= [
+           {
+             pageview:'10K',
+             price:8
+           },
+           {
+             pageview:'50K',
+             price:12
+           },
+           {
+             pageview:'100K',
+             price:16
+           },
+           {
+             pageview:'500K',
+             price:24
+           },
+           {
+             pageview:'1M',
+             price:36
+           }
+       ]
+                    
+    let pageView = document.querySelector('.pageView');
+    let price  = document.querySelector('.price');
+
+    
+
+ function dispChange(value) {
+    console.log(value);
+   for(let item of priceList){
+
+         if(item.price ==value){
+            console.log(item.pageview);
+    let str = `<span class="pageView">${item.pageview} pageview </span>`
+    let str1 = `<h1 class='price'> $${item.price} <span class="monthClass">/month</span></h1>`
+        pageView.innerHTML = str;
+        price.innerHTML = str1;
+          }
+
+
+  }
+ 
+ }
+
+ 
+ //  console.log(returnedValue);
+    // 
+
+ </script>
+</html>
