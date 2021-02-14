@@ -71,56 +71,5 @@
     Coded by <a href="#">Shashi</a>.
   </div>
 </body>
- <script>
-      
-       let priceList= [
-           {
-             pageview:'10K',
-             price:8
-           },
-           {
-             pageview:'50K',
-             price:12
-           },
-           {
-             pageview:'100K',
-             price:16
-           },
-           {
-             pageview:'500K',
-             price:24
-           },
-           {
-             pageview:'1M',
-             price:36
-           }
-       ]
-                    
-    let pageView = document.querySelector('.pageView');
-    let price  = document.querySelector('.price');
-
-    
-
- function dispChange(value) {
-    console.log(value);
-   for(let item of priceList){
-
-         if(item.price ==value){
-            console.log(item.pageview);
-    let str = `<span class="pageView">${item.pageview} pageview </span>`
-    let str1 = `<h1 class='price'> $${item.price} <span class="monthClass">/month</span></h1>`
-        pageView.innerHTML = str;
-        price.innerHTML = str1;
-          }
-
-
-  }
- 
- }
-
- 
- //  console.log(returnedValue);
-    // 
-
- </script>
+<script type="module" src="./js/main.js"></script>
 </html>
