@@ -1,21 +1,37 @@
-html {
+* {
   background-color: rgb(245, 250, 255);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  /* font-weight: 200; */
+}
+
+html {
+  position: relative;
+}
+#img {
+  height: 350px;
+  width: 100%;
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 1; */
 }
 .container {
-  max-width: 500px;
+  max-width: 800px;
   margin: 0 auto;
+  border: 1px solid;
+  z-index: 2;
+  position: absolute;
+  top: 10%;
+  left: 20%;
 }
 .heading {
   text-align: center;
-  line-height: 0.4;
+  font-size: 25px;
   z-index: 2;
-  margin-top: 15%;
-  /* position: absolute; */
+  margin-top: 10%;
 }
 .backgroundCircle {
   position: relative;
@@ -41,7 +57,8 @@ html {
   z-index: -14;
 }
 .body {
-  max-width: 350px;
+  max-width: 450px;
+  max-height: 400px;
   margin: 0 auto;
   padding: 20px;
   margin-top: 70px;
@@ -54,20 +71,28 @@ html {
   justify-content: space-between;
   align-items: center;
 }
-span.pageView {
+p.pageView {
   text-transform: uppercase;
+  font-size: 20px;
+  color: gray;
 }
-.price {
-  font-size: 2em !important;
+
+p.price {
+  font-size: 3em !important;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .monthClass {
   font-size: 15px;
   color: rgb(163, 159, 159);
-  font-weight: 100;
+  font-weight: 200;
 }
 .range input {
   width: 100%;
   background-color: aqua;
+  margin-bottom: 20px;
 }
 input[type="range"] {
   background-color: gray;
@@ -87,7 +112,7 @@ input[type="range"] {
 input#toggleButton {
   display: inline-block;
   width: 40px;
-  height: 6px;
+  height: 15px;
   opacity: 0;
   border-radius: 50px !important;
 }
@@ -95,8 +120,8 @@ input#toggleButton {
   position: absolute;
   cursor: pointer;
   top: 0;
-  left: 70px;
-  right: 0px;
+  left: 69px;
+  right: -5px;
   bottom: 0;
   background-color: #ccc;
   transition: 0.4s;
@@ -105,10 +130,10 @@ input#toggleButton {
 .slider:before {
   position: absolute;
   content: "";
-  height: 10px;
-  width: 10px;
-  left: 0px;
-  bottom: 1px;
+  height: 15px;
+  width: 15px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
   transition: 0.4s;
 }
@@ -122,9 +147,6 @@ input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
-}
-Rounded sliders .slider.round {
-  border-radius: 34px;
 }
 .slider.round:before {
   border-radius: 50%;
@@ -151,8 +173,10 @@ Rounded sliders .slider.round {
 }
 .useCase ul {
   padding-inline-start: 0px;
+  line-height: 25px;
 }
 .subscription {
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
