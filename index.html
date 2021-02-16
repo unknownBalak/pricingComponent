@@ -2,58 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Interactive pricing component</title>
       <link rel="stylesheet" href="./style.css"  />   
+
+
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
-  <img class="svg" src="./images/bg-pattern.svg" width="100%"  />
-
     <div class="container">
+      <header>
          <div class="backgroundCircle">
-            <div class="bigCircle"></div>
-            <div class="smallCircle"></div>
+         <img src="./images/pattern-circles.svg" alt='pattern-circles' />
          </div>
           <div class="heading">
             <h1>Simple, traffic-based pricing</h1>
                 <p>Sign-up for our 30-day trial, No credit card required</p>
           </div>
+        </header>
            <div class="body"> 
                <div class="traffic__price">
-                     <span class="pageView">100K pageviews</span>
-                     <h1 class="price">$16.00 <span class="monthClass">/month</span></h1>
+                     <p class="pageView"><span class="view" >100K</span> pageviews</p>
+                     <p class="price"> <span class="dollor">16.00 </span>  <span class="monthClass"> /month</span></p>
                </div> 
                <div class="range"> 
-                 <input type="range" min="8" max="36" step="4" value="16" oninput="dispChange(this.value)"  class="inputRange" />               
+                 <input type="range" min="1" aria-labelledby="slider" aria-label="slider" max="5" value="3" step="1" class="inputRange" />               
               </div>
+
+              
                <div class="billing"> 
                 
-                <div class="switch">
-                   <label>
-                      Monthly Billing <input type="checkbox" checked id="toggleButton"/>
-                                           <span class="slider round"></span>       
-                    </label>
-                </div>
                  <div class="yearlyBilling">
-          <p>Yearly Billing <span class="highlighter">25% discount</span>  </p>
-                </div>
-              
-              
-              
-              </div> 
+                   <p>Yearly Billing <span class="highlighter">25% discount</span>  </p>
+                  </div>
+                  <div class="switch">
+                     <label>Monthly Billing</label><input aria-labelledby="subscriptionToggle" aria-label="subscriptionToggle" type="checkbox"  id="toggleButton"/>
+                  </div>
+               </div> 
               <div class="subscription" >
                 <div class="useCase">
                 <ul type='none'>
-                  <li> <span class="checkMark">✔️</span> Unlimited websites</li>
-                  <li> <span class="checkMark">✔️</span> 100% data ownership</li>
-                  <li> <span class="checkMark">✔️</span> Email reports</li>
+                  <li> <span class="checkMark"></span> Unlimited websites</li>
+                  <li> <span class="checkMark"></span> 100% data ownership</li>
+                  <li> <span class="checkMark"></span> Email reports</li>
                 </ul>
                 </div>
                 
@@ -72,32 +69,6 @@
     Coded by <a href="#">Shashi</a>.
   </div>
 </body>
-<script src="./js/index.js"></script>
- <script>
-      
-    
-                    
-    let pageView = document.querySelector('.pageView');
-    let price  = document.querySelector('.price');
+<script type="module" src="./js/main.js"></script>
 
-    
-
- function dispChange(value) {
-    console.log(value);
-   for(let item of priceList){
-
-         if(item.price ==value){
-            console.log(item.pageview);
-    let str = `<span class="pageView">${item.pageview} pageview </span>`
-    let str1 = `<h1 class='price'> $${item.price} <span class="monthClass">/month</span></h1>`
-        pageView.innerHTML = str;
-        price.innerHTML = str1;
-          }
-
-
-  }
- 
- }
-
- </script>
 </html>
