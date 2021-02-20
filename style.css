@@ -43,7 +43,7 @@ body {
 }
 .body {
   width: 500px;
-  min-height: 400px;
+  /* min-height: 400px; */
   margin: 0 auto;
   padding: 20px;
   margin-top: 70px;
@@ -56,6 +56,8 @@ body {
   justify-content: space-around;
   align-items: center;
   margin: 16px 0 33px 0;
+  flex-wrap: wrap;
+  width: 100%;
 }
 p.pageView {
   text-transform: uppercase;
@@ -75,6 +77,9 @@ p.price {
   color: rgb(163, 159, 159);
   font-weight: 200;
 }
+.range {
+  width: 100%;
+}
 input[type="range"] {
   width: 100%;
   appearance: none;
@@ -84,9 +89,11 @@ input[type="range"] {
   background-color: #c1d0f3;
   height: 0.5rem;
   margin-bottom: 2rem;
+  margin-top: 2rem;
   cursor: pointer;
   outline: none;
   scrollbar-shadow-color: rgb(89, 164, 189);
+  order: 1;
 }
 
 /* Start of Css For Chrome browser */
@@ -105,11 +112,12 @@ input[type="range"]::-webkit-slider-thumb {
   height: 1.8rem;
   cursor: pointer;
   box-shadow: 2px 0px 20px 10px rgba(13, 217, 195, 0.6);
+  margin-top: -9px;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
   border-radius: 20px;
-  /* height: 0.1rem; */
+  height: 10px;
 }
 /* CSS for FIREFOX Browser */
 input[type="range"]::-moz-range-thumb {
@@ -127,6 +135,7 @@ input[type="range"]::-moz-range-thumb {
   height: 1.8rem;
   cursor: pointer;
   box-shadow: 2px 0px 20px 10px rgba(13, 217, 195, 0.6);
+  margin-top: -9px;
 }
 input[type="range"]::-moz-range-thumb:active,
 input[type="range"]::-moz-range-thumb:hover {
@@ -156,11 +165,11 @@ input[type="range"]::-ms-thumb {
   height: 1.8rem;
   cursor: pointer;
   box-shadow: 2px 0px 20px 10px rgba(13, 217, 195, 0.6);
+  margin-top: -9px;
 }
 
 input[type="range"]::-ms-track {
   background: transparent;
-  /* background-color: linear-gradiant(); */
   border-radius: 0.5rem;
   border-radius: 20px;
   color: transparent;
@@ -170,9 +179,10 @@ input[type="range"]::-ms-track {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: rgb(212, 207, 207);
   font-size: 12px;
-  color: #858c9e;
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
 }
 .billing {
   display: flex;
@@ -203,7 +213,7 @@ input[type="checkbox"]::before {
   padding: 7px;
   border-radius: 50%;
   position: absolute;
-  top: 15%;
+  top: 13%;
   right: 21px;
   transition: 0.5s;
   cursor: pointer;
@@ -223,8 +233,8 @@ input[type="checkbox"]:checked::before {
 }
 .yearlyBilling p {
   font-size: 12px;
-  color: rgb(129, 129, 129);
-  font-weight: 300;
+  color: rgb(212, 207, 207);
+  font-weight: 700;
 }
 .yearlyBilling .highlighter {
   background-color: rgb(247, 230, 207);
@@ -270,6 +280,14 @@ input[type="checkbox"]:checked::before {
 .subscription button:focus {
   box-shadow: 1px 1px 3px 3px gray;
 }
+.bodyClass {
+  max-width: 500px;
+  font-size: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
 
 @media (max-width: 992px) {
   .container {
@@ -285,6 +303,14 @@ input[type="checkbox"]:checked::before {
     width: 60%;
     margin: 0 auto;
   }
+  p.price {
+    order: 2;
+  }
+  .billing {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
   .subscription {
     display: block;
     text-align: center;
@@ -294,7 +320,8 @@ input[type="checkbox"]:checked::before {
     margin-bottom: 30px;
   }
   .subscription li {
-    font-size: 15px !important;
+    font-size: 1em;
+    font-weight: 500;
   }
   .traffic__price {
     display: flex;
@@ -305,6 +332,9 @@ input[type="checkbox"]:checked::before {
   }
   .subscription {
     margin-bottom: 30px;
+  }
+  body {
+    background-size: 100% 70%;
   }
 }
 @media screen and (min-width: 768px) {

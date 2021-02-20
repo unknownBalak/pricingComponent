@@ -1,5 +1,4 @@
 let priceList = [
-  {},
   {
     pageview: "10K",
     price: 8.0,
