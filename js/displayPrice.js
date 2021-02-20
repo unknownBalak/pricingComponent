@@ -1,6 +1,6 @@
 import { priceList } from "./data.js";
 let pageView = document.querySelector(".view");
-let price = document.querySelector(".dollor");
+let price = document.querySelector(".doller");
 let slider = document.querySelector('.inputRange');
 let sliderSlide = document.createElement('style');
 let isToggle = false;
@@ -9,7 +9,7 @@ let isToggle = false;
     value = parseInt(value);
     value = value*100/ 4
     let str = `input[type="range"]::-webkit-slider-runnable-track {
-      background-image: linear-gradient(to right, #A1f2ea ${value}% , #f1f5fe ${value}% 100%);}`
+      background-image: linear-gradient(to right, hsl(174, 86%, 45%) ${value}% , hsl(224, 65%, 95%) ${value}% 100%);}`
      return str; 
   }
 
@@ -28,6 +28,7 @@ function dispChange() {
       return 1;
     }
   });
+  console.log(index);
   if (index >=0 ) {
     pageView.innerHTML = priceList[index].pageview;
     price.innerHTML = isToggle ?  `$${parseInt((priceList[index].price * .75)).toFixed(2)}` :   `$${priceList[index].price.toFixed(2)}`;
