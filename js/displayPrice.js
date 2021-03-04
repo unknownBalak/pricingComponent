@@ -28,7 +28,7 @@ function dispChange() {
       return 1;
     }
   });
-  console.log(index);
+  // console.log(index);
   if (index >=0 ) {
     pageView.innerHTML = priceList[index].pageview;
     price.innerHTML = isToggle ?  `$${parseInt((priceList[index].price * .75)).toFixed(2)}` :   `$${priceList[index].price.toFixed(2)}`;

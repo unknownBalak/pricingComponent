@@ -17,7 +17,7 @@ window.addEventListener('resize',updateDiscount)
 
 let buttonPay = document.querySelector('.payhere');
 let body = document.querySelector('.body');
-console.log(body);
+// console.log(body);
 function thanksGiving(e) {
 
  let text = `<div class='bodyClass'>Welcome to FrontEnd Mentor Community</div>`

@@ -3,54 +3,58 @@
   margin: 0;
   padding: 0;
   font-family: "Manrope", sans-serif;
-  color: hsl(225, 20%, 60%);
 }
 body {
   background-image: url("./images/bg-pattern.svg");
   background-repeat: no-repeat;
-  background-color: rgb(238, 230, 230);
   z-index: -3;
   background-size: 100%;
+  font-size: 15px;
 }
-
 .heading h1 {
   color: #263053;
-  font-size: 1.5rem;
+  font-size: 30px;
   margin: 1rem 0 1rem 0;
   z-index: 4;
+  font-weight: bolder;
 }
 .heading p {
   color: #858c9e;
   letter-spacing: 0.03rem;
+  font-weight: bolder;
+  letter-spacing: -0.5px;
 }
 .container {
   max-width: 700px;
-  margin: 0 auto;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   position: relative;
 }
-
 .heading {
   text-align: center;
-  font-size: 20px;
   z-index: 2;
   margin-top: 10%;
 }
 .backgroundCircle {
   position: absolute;
-  left: 50%;
+  left: 52%;
   top: 0%;
-  transform: translateX(-50%);
+  transform: translateX(-52%);
   z-index: -10;
 }
 .body {
   width: 500px;
-  /* min-height: 400px; */
   margin: 0 auto;
   padding: 20px;
   margin-top: 70px;
   margin-bottom: 70px;
   background-color: white;
   box-shadow: 1px 2px 5px 2px rgb(230, 225, 225);
+  overflow: hidden;
 }
 .traffic__price {
   display: flex;
@@ -203,6 +207,7 @@ input[type="checkbox"] {
   border-radius: 20px;
   outline: none;
   cursor: pointer;
+  margin-left: 15px;
 }
 
 input[type="checkbox"]::before {
@@ -230,11 +235,12 @@ input[type="checkbox"]:checked::before {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 23px;
 }
 .yearlyBilling p,
 .switch label {
-  font-size: 12px;
-  color: hsl(226, 100%, 87%);
+  font-size: 10px;
+  color: hsl(225, 20%, 60%);
   font-weight: 700;
   letter-spacing: 0.2px;
 }
@@ -262,11 +268,18 @@ input[type="checkbox"]:checked::before {
   list-style-position: inside;
   font-size: 0.8rem;
 }
+hr.hr {
+  border-top: 1px solid rgb(251 251 251 / 8%);
+  width: 110%;
+  margin-left: -22px;
+  margin-top: 20px;
+}
 .subscription {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .subscription button {
   border-radius: 30px;
@@ -276,7 +289,7 @@ input[type="checkbox"]:checked::before {
   background-color: #1c233c;
   outline: 0;
   border: 0px solid darkblue;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .subscription button:focus {
@@ -337,21 +350,5 @@ input[type="checkbox"]:checked::before {
   }
   body {
     background-size: 100% 70%;
-  }
-}
-@media screen and (min-width: 768px) {
-  .backgroundCircle {
-    position: absolute;
-    left: 52%;
-    top: 5%;
-    transform: translateX(-50%);
-  }
-}
-@media screen and (min-width: 992px) {
-  .backgroundCircle {
-    position: absolute;
-    left: 52%;
-    top: -9%;
-    transform: translateX(-50%);
   }
 }
